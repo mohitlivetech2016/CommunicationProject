@@ -14,7 +14,6 @@ import android.widget.Toast;
 public class IncomingCallBroadcast extends BroadcastReceiver {
     Context mContext;
 
-
     @Override
     public void onReceive(Context mContext, Intent intent)
     {
