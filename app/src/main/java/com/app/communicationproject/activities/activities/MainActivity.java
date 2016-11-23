@@ -1,4 +1,4 @@
-package com.app.communicationproject.activities;
+package com.app.communicationproject.activities.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
