@@ -23,6 +23,11 @@
             </intent-filter>
         </receiver>
 
+        <receiver android:name=".activities.broadcast.CustomBroadcastReciver">
+            <intent-filter>
+                <action android:name="com.te.custombroadcast"/>
+            </intent-filter>
+        </receiver>"
     </application>
 
 </manifest>
