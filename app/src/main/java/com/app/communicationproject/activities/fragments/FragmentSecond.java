@@ -21,7 +21,7 @@ public class FragmentSecond extends BaseFragments {
     {
         View v;
 
-        v= inflater.inflate(R.layout.second_fragment,container,false);
+        v = inflater.inflate(R.layout.second_fragment,container,false);
 
         mTvShow=(TextView)v.findViewById(R.id.id_Tv_SF_showData);
       //  mTvShow.setText(name);

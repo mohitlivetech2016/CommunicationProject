@@ -27,6 +27,6 @@ public class PassDataInFragmentUsingActivity extends AppCompatActivity implement
     public void setName(String name) {
 
         FragmentSecond Obj=(FragmentSecond) getSupportFragmentManager().findFragmentById(R.id.id_Fragment2);
-       // Obj.(name);
+
     }
 }
