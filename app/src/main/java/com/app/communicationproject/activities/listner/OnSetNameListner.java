@@ -6,7 +6,7 @@ package com.app.communicationproject.activities.listner;
 
 public interface OnSetNameListner {
 
-        public void setName(String name);
+        public void setName(String origin,String destination);
 
 
     }

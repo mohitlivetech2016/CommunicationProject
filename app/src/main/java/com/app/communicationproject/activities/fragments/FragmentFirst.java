@@ -5,6 +5,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.support.annotation.Nullable;
 import android.text.Layout;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -25,11 +26,50 @@ import java.util.zip.Inflater;
 
 public class FragmentFirst extends BaseFragments {
 //FF -> First Fragment
-    EditText mEtFFGetData;
-    Button mBtnFFSubmit;
-    OnSetNameListner onSetNameListner;
-    //OnSetNameListner1 onSetNameListner1;
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle saveInstanceState)
+
+    OnSetNameListner1 onSetNameListner1;
+
+                    // allow communicate with parent
+    public interface OnSetNameListner1 {
+
+        public void searchName(String origin,String destination);
+
+
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        this.onSetNameListner1=(OnSetNameListner1)activity;
+    }
+
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+    {
+        return inflater.inflate(R.layout.first_fragment,container,false);
+
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        final EditText mEtFFGetData;
+        final Button mBtnFFSubmit;
+
+        mBtnFFSubmit=(Button)getActivity().findViewById(R.id.id_Btn_FF_Submit);
+        mEtFFGetData =(EditText)getActivity().findViewById(R.id.id_Et_FF_Passdata);
+
+        mBtnFFSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                onSetNameListner1.searchName(mEtFFGetData.getText().toString(),"Result......");
+
+
+            }
+        });
+    }
+//OnSetNameListner1 onSetNameListner1;
+   /* public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle saveInstanceState)
     {
         View view;
 
@@ -62,7 +102,7 @@ public class FragmentFirst extends BaseFragments {
         throw new ClassCastException(".............method not implemented............");
         }
 
-    }
+    }*/
 
    /* public interface OnSetNameListner1 {
 
