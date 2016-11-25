@@ -27,8 +27,8 @@ public class FragmentFirst extends BaseFragments {
 //FF -> First Fragment
     EditText mEtFFGetData;
     Button mBtnFFSubmit;
-    //OnSetNameListner onSetNameListner;
-    OnSetNameListner1 onSetNameListner1;
+    OnSetNameListner onSetNameListner;
+    //OnSetNameListner1 onSetNameListner1;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle saveInstanceState)
     {
         View view;
@@ -45,7 +45,7 @@ public class FragmentFirst extends BaseFragments {
                 String name;
                 name= mEtFFGetData.getText().toString();
                 System.out.print(name);
-                onSetNameListner1.setName(name);
+                onSetNameListner.setName(name);
             }
         });
         return view;
@@ -56,7 +56,7 @@ public class FragmentFirst extends BaseFragments {
         super.onAttach(activity);
 
         try {
-            onSetNameListner1 = (OnSetNameListner1)activity;
+            onSetNameListner = (OnSetNameListner)activity;
         }catch (Exception e)
         {
         throw new ClassCastException(".............method not implemented............");
@@ -64,10 +64,10 @@ public class FragmentFirst extends BaseFragments {
 
     }
 
-    public interface OnSetNameListner1 {
+   /* public interface OnSetNameListner1 {
 
-        public void setName(String name);
+         void setName(String name);
 
 
-    }
+    }*/
 }

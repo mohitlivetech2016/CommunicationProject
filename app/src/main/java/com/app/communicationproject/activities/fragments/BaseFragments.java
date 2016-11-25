@@ -73,4 +73,6 @@ public abstract class BaseFragments extends Fragment {
     public void onDetach() {
         super.onDetach();
     }
+
+
 }

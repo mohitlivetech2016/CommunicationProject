@@ -34,5 +34,11 @@ public class FragmentSecond extends BaseFragments {
         return v;
     }
 
+    public void setName(String name)
+    {
+        mTvShow.setText(name);
+    }
+
+
 
 }
