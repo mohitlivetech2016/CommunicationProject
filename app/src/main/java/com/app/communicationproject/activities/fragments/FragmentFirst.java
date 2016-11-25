@@ -2,6 +2,7 @@ package com.app.communicationproject.activities.fragments;
 
 import android.app.Activity;
 import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.text.Layout;
@@ -26,8 +27,8 @@ public class FragmentFirst extends BaseFragments {
 //FF -> First Fragment
     EditText mEtFFGetData;
     Button mBtnFFSubmit;
-    OnSetNameListner onSetNameListner;
-
+    //OnSetNameListner onSetNameListner;
+    OnSetNameListner1 onSetNameListner1;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle saveInstanceState)
     {
         View view;
@@ -41,24 +42,32 @@ public class FragmentFirst extends BaseFragments {
             @Override
             public void onClick(View view) {
 
-                String name= mEtFFGetData.getText().toString();
+                String name;
+                name= mEtFFGetData.getText().toString();
                 System.out.print(name);
-                onSetNameListner.setName(name);
+                onSetNameListner1.setName(name);
             }
         });
         return view;
     }
 
     @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
 
         try {
-            onSetNameListner = (OnSetNameListner)context;
+            onSetNameListner1 = (OnSetNameListner1)activity;
         }catch (Exception e)
         {
-
+        throw new ClassCastException(".............method not implemented............");
         }
+
+    }
+
+    public interface OnSetNameListner1 {
+
+        public void setName(String name);
+
 
     }
 }
