@@ -18,7 +18,7 @@ import com.app.communicationproject.activities.listner.OnFragmentInteractionList
 import com.app.communicationproject.activities.listner.OnSetNameListner;
 
 public class PassDataInFragmentUsingActivity extends AppCompatActivity implements OnSetNameListner {
-
+    Bundle bundle = new Bundle();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,25 +30,10 @@ public class PassDataInFragmentUsingActivity extends AppCompatActivity implement
     public void setName(String name) {
 
 
-        FragmentSecond f2= (FragmentSecond) getSupportFragmentManager().findFragmentById(R.id.id_Fragment2);
-        f2.getActivity().getIntent().getData();
-        System.out.print(f2);
-
-        //f2.setName();
 
 
     }
 
 
-   /* @Override
-    public void setName(String name) {
 
-        // FragmentSecond Obj=(FragmentSecond) getSupportFragmentManager().findFragmentById(R.id.id_Fragment2);
-       // System.out.print(Obj);
-
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentSecond obj = (FragmentSecond) fm.findFragmentById(R.id.id_Fragment2);
-        //obj.showData();
-
-    }*/
 }
